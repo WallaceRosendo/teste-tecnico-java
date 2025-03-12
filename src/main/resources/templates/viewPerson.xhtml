@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      lang="en" xml:lang="en">
+<h:head>
+    <title>Visualizar Pessoa</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Nome:" />
+            <h:outputText value="#{personController.selectedPerson.nome}" />
+
+            <h:outputLabel value="Email:" />
+            <h:outputText value="#{personController.selectedPerson.email}" />
+
+            <h:outputLabel value="Telefone:" />
+            <h:outputText value="#{personController.selectedPerson.telefone}" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

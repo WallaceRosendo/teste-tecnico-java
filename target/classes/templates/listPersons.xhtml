@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      lang="pt-BR" xml:lang="pt-BR">
+<h:head>
+    <title>Listar Pessoas</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="searchName" value="Buscar por Nome:" />
+            <h:inputText id="searchName" value="#{personController.searchName}" />
+            <h:commandButton value="Buscar" action="#{personController.buscarPessoas}" />
+        </h:panelGrid>
+
+        <p:dataTable value="#{personController.persons}" var="person">
+            <p:column headerText="Nome">
+                <h:outputText value="#{person.nome}" />
+            </p:column>
+            <p:column headerText="Email">
+                <h:outputText value="#{person.email}" />
+            </p:column>
+            <p:column headerText="Telefone">
+                <h:outputText value="#{person.telefone}" />
+            </p:column>
+            <p:column headerText="Ações">
+                <h:commandButton value="Editar" action="#{personController.editarPessoa(person)}" />
+                <h:commandButton value="Deletar" action="#{personController.deletarPessoa(person)}" />
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+</html>

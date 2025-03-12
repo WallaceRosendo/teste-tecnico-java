@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      lang="pt-BR" xml:lang="pt-BR">
+<h:head>
+    <title>Adicionar Pessoa</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="name" value="Nome:" />
+            <h:inputText id="name" value="#{personController.newPerson.nome}" />
+
+            <h:outputLabel for="email" value="Email:" />
+            <h:inputText id="email" value="#{personController.newPerson.email}" />
+
+            <h:outputLabel for="telephone" value="Telefone:" />
+            <h:inputText id="telephone" value="#{personController.newPerson.telefone}" />
+        </h:panelGrid>
+
+        <h:commandButton value="Salvar" action="#{personController.salvarPessoa}" />
+    </h:form>
+</h:body>
+</html>
